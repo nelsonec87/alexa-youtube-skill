@@ -82,7 +82,7 @@ function get_executable_promise(req, response, language) {
         reject(err.message);
       } else {
         var bodyJSON = JSON.parse(body);
-        if (bodyJSON.status === 'error' && bodyJSON.message === 'No results found') {
+        if (bodyJSON.state === 'error' && bodyJSON.message === 'No results found') {
           resolve({
             message: language === 'de-DE' ? 'Keine Ergebnisse auf Youtube gefunden.' : query + ' did not return any results on YouTube.',
             url: null,
